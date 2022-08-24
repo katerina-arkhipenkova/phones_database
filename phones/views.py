@@ -23,25 +23,6 @@ def show_catalog(request):
     return render(request, template, context)
 
 
-def show_catalog1(request):
-    template = 'catalog.html'
-    phone_list = []
-    phones = Phone.objects.all()
-    for phone_item in phones:
-        phone_dict = {}
-        phone_dict['id'] = phone_item.id
-        phone_dict['name'] = phone_item.name
-        phone_dict['image'] = phone_item.image
-        phone_dict['price'] = phone_item.price
-        phone_dict['release_date'] = phone_item.release_date
-        phone_dict['slug'] = phone_item.slug
-        phone_list.append(phone_dict)
-    context = {'phones': phone_list}
-    pprint(context)
-    p_o = [f'{p.name} {p.image} {p.slug} {p.price} {p.release_date}' for p in phones]
-    return HttpResponse('<br>'.join(p_o))
-
-
 def show_product(request, slug):
     template = 'product.html'
     phone_list = []
