@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Телефон {{ name }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>{{ name }}</h1>
+            <p>Цена: {{price}}р.</p>
+            <p>Дата релиза: {{release_date}}</p>
+            <p><img src="{{ image }}" height="500px"></p>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+{% endblock %}
